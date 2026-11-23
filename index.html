@@ -269,6 +269,24 @@ section{padding-block:88px}
 .service-pick::before,.people .link::before,.works figure::before,.location::after{transition:none}
 }
 
+@supports(animation-timeline:scroll()){
+  @media(prefers-reduced-motion:no-preference){
+    body::before{content:"";position:fixed;z-index:5;inset:0 0 auto;height:3px;background:var(--accent);pointer-events:none;transform:scaleX(0);transform-origin:left;animation:reading-progress linear both;animation-timeline:scroll(root block)}
+    @keyframes reading-progress{to{transform:scaleX(1)}}
+  }
+  @media(min-width:896px) and (prefers-reduced-motion:no-preference){
+    .hero-photo{animation:hero-frame 1s cubic-bezier(.22,1,.36,1) both, hero-drift linear both;animation-timeline:auto,view(block);animation-range:normal,exit 0% exit 100%}
+    .hero-detail-photo{animation:hero-frame 1s .12s cubic-bezier(.22,1,.36,1) both, detail-drift linear both;animation-timeline:auto,view(block);animation-range:normal,exit 0% exit 100%}
+    @keyframes hero-drift{to{translate:0 120px}}
+    @keyframes detail-drift{to{translate:0 -80px}}
+  }
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .works button{cursor:zoom-in}
+  .works button img{transform-origin:var(--photo-x,50%) var(--photo-y,50%)}
+  .works button:hover img{transform:scale(1.13)}
+}
+
 </style>
 </head>
 <body>
@@ -485,9 +503,21 @@ for (const link of serviceLinks) {
   link.addEventListener('click', () => setService(link));
 }
 
+const galleryMotion = matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)');
+for (const photo of galleryImages) {
+  const trigger = photo.closest('button');
+  trigger.addEventListener('pointermove', event => {
+    if (event.pointerType !== 'mouse' || !galleryMotion.matches) return;
+    const frame = trigger.getBoundingClientRect();
+    photo.style.setProperty('--photo-x', ((event.clientX - frame.left) / frame.width * 100) + '%');
+    photo.style.setProperty('--photo-y', ((event.clientY - frame.top) / frame.height * 100) + '%');
+  });
+}
+
 </script>
 </body>
 </html>
+
 
 
 
