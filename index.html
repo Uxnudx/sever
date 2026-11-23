@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#191918">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="«Барбершоп Север» — концепт мужского барбершопа в Казани. Стрижки, оформление бороды, мастера и примеры работ.">
+<meta property="og:title" content="Барбершоп Север · Казань">
+<meta property="og:description" content="Мужские стрижки и оформление бороды. Проект для портфолио.">
+<meta property="og:image" content="assets/hero.webp">
+<title>Барбершоп Север · Мужские стрижки в Казани</title>
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/onest.ttf" as="font" type="font/ttf" crossorigin>
+<style>
+@font-face{font-family:Onest;src:url("assets/onest.ttf") format("truetype");font-weight:100 900;font-display:swap}
+:root{color-scheme:dark;--bg:#191918;--panel:#232321;--text:#f2ece3;--muted:#b8afa4;--line:#47433e;--accent:#e5a577}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.55 Onest,system-ui,sans-serif}
+a{color:inherit;text-underline-offset:.24em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+button,input{font:inherit}
+img{display:block;width:100%;height:auto;background:var(--panel);object-fit:cover}
+.wrap{width:min(calc(100% - 32px),1280px);margin-inline:auto}
+header{border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:8px;font-weight:800;letter-spacing:.04em;text-decoration:none;min-height:44px}
+.brand svg{width:24px;height:24px;color:var(--accent)}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+nav a,.link{display:inline-flex;align-items:center;min-height:44px}
+nav a{color:var(--muted);text-decoration:none;font-size:15px}
+nav a:hover,.link:hover{color:var(--accent)}
+h1,h2,h3,p,figure{margin:0}
+h1,h2{font-weight:800;letter-spacing:-.055em;line-height:.95}
+h1{font-size:clamp(54px,8.1vw,116px)}
+h2{font-size:clamp(40px,6vw,80px)}
+h3{font-size:24px;line-height:1.2;letter-spacing:-.035em}
+.eyebrow{color:var(--accent);font-size:15px;font-weight:600}
+.hero{padding-block:40px 48px;display:grid;gap:32px}
+.hero-copy{display:grid;align-content:center;justify-items:start;gap:24px}
+.hero-photo{aspect-ratio:4/3;object-position:center}
+.price{color:var(--muted)}
+.price strong{color:var(--text);font-size:24px;white-space:nowrap;margin-left:8px}
+.button{display:inline-flex;justify-content:center;align-items:center;gap:16px;min-height:56px;padding:8px 24px;background:var(--accent);color:var(--bg);text-decoration:none;border:1px solid transparent;font-weight:750;cursor:pointer}
+.button:hover{background:var(--text)}
+.button:disabled{opacity:.65;cursor:wait}
+section{padding-block:48px;border-top:1px solid var(--line);scroll-margin-top:16px}
+.section-head{display:grid;gap:8px;margin-bottom:24px}
+.section-head p,.muted,figcaption{color:var(--muted)}
+.services{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.services li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 16px;align-items:center;min-height:72px;padding:8px 0;border-bottom:1px solid var(--line)}
+.services strong{font-size:clamp(17px,2vw,24px)}
+.services span{grid-column:1;color:var(--muted);font-size:15px}
+.services b{grid-column:2;grid-row:1/span 2;white-space:nowrap}
+.people,.works{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.people img{aspect-ratio:4/5;margin-bottom:16px}
+.people p{margin-top:8px}
+.works button{display:block;border:0;padding:0;background:transparent;width:100%;cursor:zoom-in}
+.works img{aspect-ratio:1}
+.split{display:grid;gap:24px}
+.location{padding:24px;background:var(--panel);display:grid;gap:8px;align-content:start}
+.booking{display:grid;gap:16px;max-width:560px}
+.booking label{display:grid;gap:8px}
+input:not([type=checkbox]){width:100%;min-height:48px;border:1px solid var(--line);background:var(--panel);color:var(--text);padding:8px 16px;border-radius:0}
+.booking .consent{display:flex;gap:8px;align-items:flex-start;min-height:44px;color:var(--muted)}
+input[type=checkbox]{flex:none;width:20px;height:20px;margin:3px 4px 0 0;accent-color:var(--accent)}
+.status:empty{display:none}
+footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;align-items:center}
+dialog{max-width:min(90vw,760px);padding:16px;background:var(--panel);color:var(--text);border:1px solid var(--line)}
+dialog::backdrop{background:#000c}
+dialog img{max-height:70dvh;object-fit:contain}
+dialog .button{margin-bottom:8px;min-height:44px}
+dialog p{margin-top:8px}
+@media(max-width:480px){nav a:first-child{display:none}.hero .button{width:100%}}
+@media(min-width:896px){
+.wrap{width:min(calc(100% - 64px),1280px)}
+nav{gap:32px}
+.hero{grid-template-columns:1fr 1fr;align-items:stretch;gap:32px;padding-block:56px 64px}
+.hero-photo{height:100%;min-height:416px}
+section{padding-block:64px}
+.section-head{margin-bottom:32px}
+.services li{grid-template-columns:1fr 128px 128px}
+.services span,.services b{grid-column:auto;grid-row:auto}
+.services b{text-align:right}
+.people,.works{gap:24px}
+.people img{aspect-ratio:3/2}
+.works{grid-template-columns:repeat(3,minmax(0,1fr))}
+.split{grid-template-columns:1fr 1fr;gap:32px}
+}
+.hero.wrap{width:100%;max-width:none;position:relative;isolation:isolate;display:grid;gap:0;padding:0;background:#141312}
+.hero-photo{grid-row:1;grid-column:1;aspect-ratio:auto;width:100%;height:clamp(280px,86vw,488px);object-fit:cover;object-position:52% 42%;background:#141312}
+.hero-copy{grid-row:2;grid-column:1;gap:16px;padding:24px 16px 32px}
+.hero-copy h1{font-size:clamp(56px,13vw,88px);line-height:.83;letter-spacing:-.07em}
+.hero-copy .eyebrow{color:var(--text)}
+.hero-details{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:0 16px;width:100%}
+.hero-details p{font-size:15px}
+.hero-details .price{display:flex;align-items:baseline;gap:8px}
+.hero-details .price strong{margin:0}
+.hero .button{width:100%}
+@media(min-width:896px){
+.hero.wrap{min-height:clamp(632px,63vw,880px);display:flex;align-items:flex-end;padding:48px max(32px,calc((100vw - 1280px)/2))}
+.hero-photo{position:absolute;inset:0 0 0 auto;z-index:-1;width:82%;height:100%;object-position:60% 42%}
+.hero-copy{background:#191918;width:min(68%,720px);padding:32px;gap:24px}
+.hero-copy h1{font-size:clamp(80px,9vw,144px)}
+.hero-details{justify-content:flex-start;gap:8px 24px}
+.hero .button{width:auto}
+}
+
+/* Campaign layout */
+:root{--bg:#111110;--panel:#1c1b19;--text:#fff8ef;--muted:#c3b9af;--line:#48413c;--accent:#ff594e}
+.hero.wrap{overflow:hidden;background:#171412}
+.hero-photo{height:clamp(272px,80vw,480px);object-position:52% 42%}
+.hero-copy{position:relative;background:#171412;gap:16px;padding:24px 16px 32px}
+.hero-copy::before{content:"";position:absolute;inset:-8px 0 auto;height:8px;background:var(--accent)}
+.hero-copy h1{font-size:clamp(54px,13vw,88px);line-height:.9;letter-spacing:-.065em}
+
+.hero-copy .eyebrow{color:var(--muted)}
+.hero-detail-photo{display:none}
+.hero .button{color:#111110}
+section h2{letter-spacing:-.055em}
+section .section-head{position:relative;padding-left:16px}
+section .section-head::before{content:"";position:absolute;left:0;top:4px;bottom:4px;width:4px;background:var(--accent)}
+.services li{transition:background-color .2s}
+.services li:hover{background:var(--panel)}
+.people img,.works img{filter:saturate(.7);transition:filter .3s,transform .45s cubic-bezier(.2,.7,.2,1)}
+.works button{overflow:hidden}
+.people article:hover img,.works button:hover img,.works button:focus-visible img{filter:saturate(1)}
+.works button:hover img,.works button:focus-visible img{transform:scale(1.055)}
+#works .section-head{margin-bottom:32px}
+#works .works{gap:8px}
+#works .works img{aspect-ratio:4/5}
+@media(min-width:896px){
+.hero.wrap{min-height:clamp(680px,65vw,880px);padding:0 max(32px,calc((100vw - 1280px)/2)) 48px}
+.hero.wrap::before{content:"";position:absolute;inset:0 0 0 58%;background:#bd3029;z-index:-1}
+.hero-photo{inset:0 auto 0 0;width:68%;height:100%;object-position:44% 40%;z-index:-2}
+.hero-detail-photo{display:block;position:absolute;top:12%;right:5%;width:32%;height:64%;object-fit:cover;z-index:-1}
+.hero-copy{width:auto;max-width:100%;padding:24px 32px 32px;background:#111110;gap:16px}
+.hero-copy::before{inset:0 auto 0 0;width:8px;height:auto}
+.hero-copy h1{font-size:clamp(78px,8.5vw,128px)}
+.hero-details{gap:24px}
+#works .works{gap:16px}
+#works figure:nth-child(3n + 2){margin-top:32px}
+}
+@media(prefers-reduced-motion:no-preference){
+.hero-photo{animation:hero-frame 1s cubic-bezier(.22,1,.36,1) both}
+.hero-detail-photo{animation:hero-frame 1s .12s cubic-bezier(.22,1,.36,1) both}
+.hero-copy{animation:hero-copy .75s .12s cubic-bezier(.22,1,.36,1) both}
+@keyframes hero-frame{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0)}}
+@keyframes hero-copy{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+.reveal.is-entering{animation:content-enter .66s var(--enter-delay,0ms) cubic-bezier(.22,1,.36,1) both}
+@keyframes content-enter{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.reveal.is-entering:focus-within{animation:none}
+}
+@media(prefers-reduced-motion:reduce){.people img,.works img,.services li{transition:none}}
+
+@media(min-width:896px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+.hero-title-area{perspective:800px}
+.hero-title-area h1{transform:rotateX(var(--title-x,0deg)) rotateY(var(--title-y,0deg));transform-origin:center;transition:transform .42s cubic-bezier(.2,.75,.3,1)}
+.hero-title-area.is-tracking h1{transition-duration:.16s}
+}
+
+/* Section composition */
+section{padding-block:64px}
+section .section-head{margin-bottom:32px}
+section h2{line-height:.88}
+#team{background:var(--panel)}
+#team,#works,#booking{margin-inline:calc((100% - 100vw) / 2);padding-inline:max(16px,calc((100vw - 1280px)/2));overflow:clip}
+.people{gap:8px}
+.people article{display:grid;grid-template-rows:auto auto 1fr auto;align-items:start}
+.people img{margin-bottom:0;aspect-ratio:4/5;filter:saturate(.65) contrast(1.06)}
+.people h3{margin-top:16px}
+.people p{margin:8px 0 16px}
+.people .link{border-top:1px solid var(--line);justify-content:space-between;padding-top:8px;text-decoration:none;font-weight:700}
+#works{background:#151412}
+.works figure{position:relative}
+.works figcaption{font-size:15px;padding-block:8px 16px}
+.works button img{transition:transform .55s cubic-bezier(.22,1,.36,1),filter .35s}
+.works button::after{content:"↗";position:absolute;inset:8px 8px auto auto;width:32px;height:32px;display:grid;place-items:center;background:#111110;color:var(--text)}
+.works button:hover::after,.works button:focus-visible::after{background:var(--accent);color:#111110}
+#works .works img{aspect-ratio:1}
+.location{border-left:4px solid var(--accent);padding:24px}
+#booking{background:#be3129;color:#fffaf3}
+#booking .section-head p{color:#fffaf3;max-width:28ch}
+#booking .section-head::before{background:#fffaf3}
+.booking{color:var(--text);padding:24px;background:#111110}
+.booking .button{width:100%}
+.booking .consent{font-size:15px}
+#policy{padding-block:32px}
+#policy h2{font-size:24px;letter-spacing:-.035em;text-transform:none}
+#policy .section-head{margin-bottom:16px}
+#policy p{max-width:75ch}
+.viewer-controls{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}
+.viewer-controls .button{padding-inline:12px;margin:0}
+.viewer-caption{display:flex;justify-content:space-between;gap:16px}
+@media(min-width:768px){
+section{padding-block:88px}
+#team,#works,#booking{padding-inline:max(32px,calc((100vw - 1280px)/2))}
+#services{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px}
+#services h2{max-width:8ch}
+.services li{grid-template-columns:minmax(0,1fr) auto auto;gap:16px;padding-inline:8px}
+.services span,.services b{grid-column:auto;grid-row:auto}
+.services b{text-align:right;min-width:72px}
+.people{grid-template-columns:1fr 1fr;gap:24px}
+.people article:nth-child(2){margin-top:48px}
+.people img{aspect-ratio:3/2}
+.booking{padding:32px}
+}
+@media(min-width:896px){
+#team .section-head,#works .section-head{margin-bottom:48px}
+#works .works{grid-template-columns:repeat(12,minmax(0,1fr));align-items:start}
+#works .works figure{grid-column:span 4;margin:0}
+#works .works figure:nth-child(1),#works .works figure:nth-child(6){grid-column:span 5}
+#works .works figure:nth-child(3),#works .works figure:nth-child(4){grid-column:span 3}
+#works .works figure:nth-child(2),#works .works figure:nth-child(5){margin-top:40px}
+#works .works img{aspect-ratio:1.2}
+}
+
+.hero-title-line{display:block;position:relative}
+.hero-title-echo{display:none}
+@media(min-width:896px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+.hero-title-line{transform:translateX(calc(var(--title-shift,0px) * var(--line-direction)));transition:transform .42s cubic-bezier(.2,.75,.3,1)}
+.hero-title-line:first-child{--line-direction:1}
+.hero-title-line:last-child{--line-direction:-1}
+.hero-title-echo{display:block;position:absolute;inset:0 auto auto 0;z-index:-1;pointer-events:none;color:transparent;-webkit-text-stroke:1px var(--accent);opacity:0;transform:translate(0,0);transition:transform .42s cubic-bezier(.2,.75,.3,1),opacity .35s}
+.hero-title-area.is-tracking .hero-title-line,.hero-title-area.is-tracking .hero-title-echo{transition-duration:.18s}
+.hero-title-area.is-tracking .hero-title-echo{opacity:.85;transform:translate(calc(-10px * var(--line-direction)),7px)}
+}
+@media(prefers-reduced-motion:no-preference){
+.section-head.is-entering{animation:none}
+.section-head.is-entering h2{animation:heading-cut .82s var(--enter-delay,0ms) cubic-bezier(.22,1,.36,1) both}
+.section-head.is-entering::before{transform-origin:top;animation:heading-mark .58s var(--enter-delay,0ms) cubic-bezier(.22,1,.36,1) both}
+@keyframes heading-cut{from{clip-path:inset(100% 0 0 0);transform:translateY(12px)}to{clip-path:inset(0 0 -8px 0);transform:none}}
+@keyframes heading-mark{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+}
+
+.service-pick{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-column:1/-1;align-items:center;gap:0 12px;min-height:72px;padding:8px 12px;text-decoration:none;position:relative;isolation:isolate}
+.services li{display:block;padding:0}
+.service-pick::before{content:"";position:absolute;inset:0;background:var(--accent);z-index:-1;transform:scaleX(0);transform-origin:left;transition:transform .38s cubic-bezier(.22,1,.36,1)}
+.service-pick:hover::before,.service-pick:focus-visible::before,.service-pick[aria-current=true]::before{transform:scaleX(1)}
+.service-pick:hover,.service-pick:focus-visible,.service-pick[aria-current=true],
+.service-pick:hover span,.service-pick:focus-visible span,.service-pick[aria-current=true] span{color:#111110}
+.service-pick b::after{content:"↗";display:inline-block;margin-left:8px}
+@media(min-width:768px){.service-pick{grid-template-columns:minmax(0,1fr) auto auto;gap:16px}}
+.people article{position:relative}
+.people .link{position:relative;isolation:isolate;overflow:hidden;padding-inline:8px}
+.people .link::before{content:"";position:absolute;inset:0;background:var(--accent);transform:translateY(101%);transition:transform .28s ease;z-index:-1}
+.people .link:hover,.people .link:focus-visible{color:#111110}
+.people .link:hover::before,.people .link:focus-visible::before{transform:none}
+.works figure::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--accent);z-index:1;pointer-events:none;transform-origin:top;transform:scaleY(0);transition:transform .35s ease}
+.works figure:hover::before,.works figure:focus-within::before{transform:scaleY(1)}
+.location{position:relative;isolation:isolate;overflow:hidden;min-height:240px;align-content:center;padding-right:72px}
+.location::after{content:"";position:absolute;z-index:-1;width:280px;height:280px;right:-176px;top:50%;translate:0 -50%;rotate:-24deg;border:1px solid var(--line);outline:1px solid var(--line);outline-offset:16px;box-shadow:0 0 0 32px #23211e,0 0 0 33px var(--line);transition:rotate .65s cubic-bezier(.22,1,.36,1)}
+.location:hover::after,.location:focus-within::after{rotate:-12deg}
+.booking-selection{display:grid;gap:4px;padding:12px 16px;border-left:4px solid var(--accent);background:var(--panel);font-size:15px}
+.booking-selection p{margin:0}
+.booking-selection .muted{color:var(--muted)}
+@media(prefers-reduced-motion:no-preference){
+.services li.is-entering{animation:price-enter .6s var(--enter-delay,0ms) cubic-bezier(.22,1,.36,1) both}
+.people article.is-entering{animation:none}
+.people article.is-entering img{animation:portrait-enter .85s var(--enter-delay,0ms) cubic-bezier(.22,1,.36,1) both}
+.works figure.is-entering{animation:gallery-enter .7s var(--enter-delay,0ms) cubic-bezier(.22,1,.36,1) both}
+@keyframes price-enter{from{clip-path:inset(0 100% 0 0);opacity:0}to{clip-path:inset(0);opacity:1}}
+@keyframes portrait-enter{from{clip-path:inset(100% 0 0)}to{clip-path:inset(0)}}
+@keyframes gallery-enter{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+.services li.is-entering:focus-within,.works figure.is-entering:focus-within{animation:none}
+}
+@media(prefers-reduced-motion:reduce){
+.service-pick::before,.people .link::before,.works figure::before,.location::after{transition:none}
+}
+
+</style>
+</head>
+<body>
+<header id="top"><div class="wrap bar">
+<a class="brand" href="#top"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1 22 22l-10-6-10 6L12 1Zm0 6-5 10 5-3 5 3-5-10Z"/></svg>СЕВЕР</a>
+<nav aria-label="Разделы"><a href="#services">Прайс</a><a href="#team">Мастера</a><a href="#works">Работы</a><a href="#location">Адрес</a></nav>
+</div></header>
+<main>
+<div class="hero wrap">
+<div class="hero-copy">
+<p class="eyebrow">Мужские стрижки и борода · Казань</p>
+<div class="hero-title-area"><h1><span class="hero-title-line">Барбершоп<span class="hero-title-echo" aria-hidden="true">Барбершоп</span></span> <span class="hero-title-line">Север<span class="hero-title-echo" aria-hidden="true">Север</span></span></h1></div>
+<div class="hero-details"><p class="muted">Ново-Савиновский район</p><p class="price">Стрижка <strong>1 500 ₽</strong></p></div>
+<a class="button" href="#booking">Записаться <span aria-hidden="true">↓</span></a>
+</div>
+<img class="hero-photo" src="assets/hero.webp" width="1536" height="1024" alt="Мастер стрижёт клиента в барбершопе" fetchpriority="high">
+<img class="hero-detail-photo" src="assets/work-5.webp" width="508" height="337" alt="">
+</div>
+<div class="wrap">
+<section id="services" aria-labelledby="services-title">
+<div class="section-head"><h2 id="services-title">Услуги и цены</h2></div>
+<ul class="services">
+<li><a class="service-pick" href="#booking" data-service="Мужская стрижка"><strong>Мужская стрижка</strong><span>45 минут</span><b>1 500 ₽</b></a></li>
+<li><a class="service-pick" href="#booking" data-service="Стрижка машинкой"><strong>Стрижка машинкой</strong><span>30 минут</span><b>1 000 ₽</b></a></li>
+<li><a class="service-pick" href="#booking" data-service="Оформление бороды"><strong>Оформление бороды</strong><span>30 минут</span><b>900 ₽</b></a></li>
+<li><a class="service-pick" href="#booking" data-service="Стрижка и борода"><strong>Стрижка и борода</strong><span>75 минут</span><b>2 200 ₽</b></a></li>
+</ul></section>
+<section id="team" aria-labelledby="team-title">
+<div class="section-head"><h2 id="team-title">Мастера</h2></div>
+<div class="people">
+<article><img src="assets/timur.webp" width="508" height="337" loading="lazy" alt="Портрет Тимура"><h3>Тимур</h3><p class="muted">Фейды и короткие стрижки</p><a class="link" href="#booking" data-barber="Тимур">К Тимуру ↗</a></article>
+<article><img src="assets/artem.webp" width="508" height="337" loading="lazy" alt="Портрет Артёма"><h3>Артём</h3><p class="muted">Классические формы и борода</p><a class="link" href="#booking" data-barber="Артём">К Артёму ↗</a></article>
+</div></section>
+<section id="works" aria-labelledby="works-title">
+<div class="section-head"><h2 id="works-title">Работы</h2></div>
+<div class="works">
+<figure><button type="button" aria-label="Увеличить фото: фейд"><img src="assets/work-1.webp" width="508" height="337" loading="lazy" alt="Короткая стрижка с фейдом"></button></figure>
+<figure><button type="button" aria-label="Увеличить фото: кроп"><img src="assets/work-2.webp" width="508" height="337" loading="lazy" alt="Текстурный кроп"></button></figure>
+<figure><button type="button" aria-label="Увеличить фото: боковой пробор"><img src="assets/work-3.webp" width="508" height="337" loading="lazy" alt="Классическая стрижка с боковым пробором"></button></figure>
+<figure><button type="button" aria-label="Увеличить фото: кудри"><img src="assets/work-4.webp" width="508" height="337" loading="lazy" alt="Кудри с короткими висками"></button></figure>
+<figure><button type="button" aria-label="Увеличить фото: борода"><img src="assets/work-5.webp" width="508" height="337" loading="lazy" alt="Борода с оформленным контуром"></button></figure>
+<figure><button type="button" aria-label="Увеличить фото: андеркат"><img src="assets/work-6.webp" width="508" height="337" loading="lazy" alt="Андеркат с укладкой назад"></button></figure>
+</div></section>
+<section id="location" class="split" aria-labelledby="location-title">
+<div class="section-head"><h2 id="location-title">Как добраться</h2></div>
+<div class="location"><h3>Казань</h3><p>Ново-Савиновский район</p><p class="muted">Точный адрес и часы работы добавляются перед запуском.</p><a class="link" href="https://yandex.ru/maps/43/kazan/?text=Ново-Савиновский%20район">Посмотреть район на карте ↗</a></div>
+</section>
+<section id="booking" class="split" aria-labelledby="booking-title">
+<div class="section-head"><h2 id="booking-title">Запись</h2><p>Оставьте телефон для подтверждения времени.</p></div>
+<form class="booking" id="booking-form" action="api/booking" method="post">
+<div class="booking-selection" aria-live="polite"><p id="service-choice">Услуга: уточним при записи</p><p class="muted" id="barber-choice">Мастер: любой свободный</p></div><input type="hidden" name="service">
+<input type="hidden" name="barber">
+<label>Имя<input name="name" autocomplete="name" required maxlength="80"></label>
+<label>Телефон<input type="tel" name="phone" autocomplete="tel" required maxlength="32"></label>
+<label class="consent"><input type="checkbox" name="consent" required><span>Согласен на обработку данных согласно <a href="#policy" id="policy-link">политике обработки данных</a>.</span></label>
+<button class="button" type="submit">Отправить заявку</button>
+<p class="status" id="status" role="status"></p>
+</form>
+</section>
+<section id="policy" aria-labelledby="policy-title">
+<div class="section-head"><h2 id="policy-title">Обработка данных</h2></div>
+<p class="muted">Это сайт для портфолио. Используйте для проверки только тестовые данные. При подключённой серверной функции введённые имя, телефон, выбранная услуга и мастер передаются в указанный при настройке чат Telegram для проверки доставки заявки. Перед запуском для клиентов владелец добавляет утверждённую политику с реквизитами оператора.</p>
+</section>
+</div>
+</main>
+<footer><div class="wrap"><span>Барбершоп Север · Казань</span><span>Проект для портфолио. Цены, имена и фотографии иллюстративные.</span></div></footer>
+<dialog id="photo-viewer" aria-label="Фотография работы">
+<form method="dialog" class="viewer-controls"><button class="button" type="button" data-step="-1" aria-label="Предыдущее фото">←</button><button class="button">Закрыть</button><button class="button" type="button" data-step="1" aria-label="Следующее фото">→</button></form>
+<div id="photo-content"></div>
+</dialog>
+<script>
+const bookingForm = document.querySelector('#booking-form');
+const barberChoice = document.querySelector('#barber-choice');
+const statusMessage = document.querySelector('#status');
+const submitButton = bookingForm.querySelector('[type="submit"]');
+
+document.querySelectorAll('[data-barber], .hero .button').forEach(link => {
+  link.addEventListener('click', () => {
+    const barber = link.dataset.barber || '';
+    bookingForm.elements.barber.value = barber;
+    barberChoice.textContent = 'Мастер: ' + (barber || 'любой свободный');
+  });
+});
+
+bookingForm.addEventListener('submit', async event => {
+  event.preventDefault();
+  const data = Object.fromEntries(new FormData(bookingForm));
+  if (!/^[+]?\d{10,15}$/.test(data.phone.replace(/[\s().-]/g, ''))) {
+    statusMessage.textContent = 'Проверьте телефон. Нужно от 10 до 15 цифр.';
+    bookingForm.elements.phone.focus();
+    return;
+  }
+  if (location.protocol === 'file:') {
+    statusMessage.textContent = 'Локальный просмотр. Для отправки откройте сайт на сервере с подключённой функцией.';
+    return;
+  }
+  submitButton.disabled = true;
+  statusMessage.textContent = 'Отправляем заявку…';
+  try {
+    const response = await fetch(bookingForm.action, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({...data, consent: data.consent === 'on'}),
+      signal: AbortSignal.timeout(12000)
+    });
+    if (!response.ok) throw new Error('Delivery failed');
+    bookingForm.reset();
+    setService(null);
+    barberChoice.textContent = 'Мастер: любой свободный';
+    statusMessage.textContent = 'Заявка отправлена. Время визита подтвердят отдельно.';
+  } catch {
+    statusMessage.textContent = 'Не удалось подтвердить отправку. Если заявка не дошла, попробуйте ещё раз.';
+  } finally {
+    submitButton.disabled = false;
+  }
+});
+
+const viewer = document.querySelector('#photo-viewer');
+const photoContent = document.querySelector('#photo-content');
+const galleryImages = [...document.querySelectorAll('.works button img')];
+let activePhoto = 0;
+
+function showPhoto(index) {
+  activePhoto = (index + galleryImages.length) % galleryImages.length;
+  const image = galleryImages[activePhoto].cloneNode();
+  image.loading = 'eager';
+  const caption = document.createElement('p');
+  caption.className = 'viewer-caption';
+  const description = document.createElement('span');
+  description.textContent = image.alt;
+  const position = document.createElement('span');
+  position.textContent = (activePhoto + 1) + ' / ' + galleryImages.length;
+  caption.append(description, position);
+  photoContent.replaceChildren(image, caption);
+}
+
+galleryImages.forEach((image, index) => {
+  const label = document.createElement('figcaption');
+  label.textContent = image.alt;
+  image.closest('figure').append(label);
+  image.closest('button').addEventListener('click', () => {
+    showPhoto(index);
+    viewer.showModal();
+  });
+});
+
+viewer.querySelector('[data-step="-1"]').addEventListener('click', () => showPhoto(activePhoto - 1));
+viewer.querySelector('[data-step="1"]').addEventListener('click', () => showPhoto(activePhoto + 1));
+viewer.addEventListener('keydown', event => {
+  if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+  event.preventDefault();
+  showPhoto(activePhoto + (event.key === 'ArrowRight' ? 1 : -1));
+});
+
+if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const entranceObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('is-entering');
+      entranceObserver.unobserve(entry.target);
+    }
+  }, {threshold: 0.12});
+
+  document.querySelectorAll('.section-head, .services li, .people article, .works figure, .location').forEach((element, index) => {
+    element.classList.add('reveal');
+    element.style.setProperty('--enter-delay', (index % 3) * 65 + 'ms');
+    entranceObserver.observe(element);
+  });
+}
+
+const titleArea = document.querySelector('.hero-title-area');
+const tiltMedia = matchMedia('(min-width:896px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)');
+let tiltFrame = 0;
+
+function resetTitleTilt() {
+  cancelAnimationFrame(tiltFrame);
+  titleArea.classList.remove('is-tracking');
+  titleArea.style.removeProperty('--title-x');
+  titleArea.style.removeProperty('--title-y');
+  titleArea.style.removeProperty('--title-shift');
+}
+
+titleArea.addEventListener('pointermove', event => {
+  if (!tiltMedia.matches || event.pointerType !== 'mouse') return;
+  cancelAnimationFrame(tiltFrame);
+  tiltFrame = requestAnimationFrame(() => {
+    const bounds = titleArea.getBoundingClientRect();
+    const x = (event.clientX - bounds.left) / bounds.width - .5;
+    const y = (event.clientY - bounds.top) / bounds.height - .5;
+    titleArea.classList.add('is-tracking');
+    titleArea.style.setProperty('--title-x', (-y * 16).toFixed(2) + 'deg');
+    titleArea.style.setProperty('--title-y', (x * 20).toFixed(2) + 'deg');
+    titleArea.style.setProperty('--title-shift', (x * 28).toFixed(2) + 'px');
+  });
+});
+titleArea.addEventListener('pointerleave', resetTitleTilt);
+titleArea.addEventListener('pointercancel', resetTitleTilt);
+tiltMedia.addEventListener('change', resetTitleTilt);
+
+const serviceLinks = [...document.querySelectorAll('.service-pick')];
+const serviceChoice = document.querySelector('#service-choice');
+
+function setService(selected) {
+  for (const link of serviceLinks) {
+    if (link === selected) link.setAttribute('aria-current', 'true');
+    else link.removeAttribute('aria-current');
+  }
+  const service = selected?.dataset.service || '';
+  bookingForm.elements.service.value = service;
+  serviceChoice.textContent = service ? 'Услуга: ' + service : 'Услуга: уточним при записи';
+}
+
+for (const link of serviceLinks) {
+  link.addEventListener('click', () => setService(link));
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
